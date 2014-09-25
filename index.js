@@ -141,11 +141,7 @@ gpsy.prototype._handle = function(data) {
 				});
 			}
 		return;
-		case "satellite-list-partial": break;
-		case "active-satellites": break;
-		default:
-			console.log(data);
-		break;
+		default: break;
 	}
 };
 
