@@ -1,0 +1,38 @@
+{
+  "name": "gpsy",
+  "version": "0.0.1",
+  "description": "a gps serial client",
+  "main": "index.js",
+  "dependencies": {
+    "moment": "^2.8.3",
+    "nmea": "^0.0.7",
+    "serialport": "^1.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yetzt/node-gpsy.git"
+  },
+  "keywords": [
+    "gps",
+    "glonass",
+    "galileo",
+    "nmea",
+    "serial",
+    "serialport",
+    "location",
+    "geolocation",
+    "coordinates",
+    "time",
+    "date"
+  ],
+  "author": "yetzt <node@yetzt.me>",
+  "licenses": [{
+    "type": "Public Domain",
+    "url": "http://unlicense.org/UNLICENSE"
+  }],
+  "bugs": {
+    "url": "https://github.com/yetzt/node-gpsy/issues"
+  },
+  "homepage": "https://github.com/yetzt/node-gpsy",
+  "readmeFilename": "readme.md"
+}
