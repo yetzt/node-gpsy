@@ -87,13 +87,14 @@ gpsy.prototype._handle = function(data) {
 	switch (data.type) {
 		case "track-info": 
 		case "nav-info":
-			if (data.status === "valid") {
 
-				// date
-				if (data.hasOwnProperty("date") && data.hasOwnProperty("timestamp")) self.emit("time", {
-					time: self._parsedate(data.date, data.timestamp).valueOf(),
-					t: (new Date().valueOf())
-				});
+			// date
+			if (data.hasOwnProperty("date") && data.hasOwnProperty("timestamp")) self.emit("time", {
+				time: self._parsedate(data.date, data.timestamp).valueOf(),
+				t: (new Date().valueOf())
+			});
+
+			if (data.status === "valid") {
 
 				// position
 				if (data.hasOwnProperty("lat") && data.hasOwnProperty("lon")) self.emit("position", {
