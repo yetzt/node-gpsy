@@ -114,13 +114,13 @@ gpsy.prototype._handle = function(data) {
 			self.emit("fix", {
 				type: data.fixType, 
 				num: data.numSat,
-				t: (new Date())
+				t: (new Date()).valueOf()
 			});
 			if (["fix","delta","pps","rtk","frtk"].indexOf(data.fixType) >= 0) {
 				self.emit("position", {
 					lat: self._parsell(data.lat, data.latPole),
 					lon: self._parsell(data.lon, data.lonPole),
-					t: (new Date())
+					t: (new Date()).valueOf()
 				});
 			}
 		return;
