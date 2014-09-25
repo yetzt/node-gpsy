@@ -80,6 +80,10 @@ gpsy.prototype._parsell = function(l,p){
 
 gpsy.prototype._handle = function(data) {
 	var self = this;
+	
+	// emit raw data package
+	self.emit("data", data);
+	
 	switch (data.type) {
 		case "track-info": 
 		case "nav-info":
