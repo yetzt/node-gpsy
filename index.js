@@ -86,6 +86,18 @@ gpsy.prototype._handle = function(data) {
 	
 	switch (data.type) {
 		case "track-info": 
+		
+			// speed
+			if (data.hasOwnProperty("speedKmph")) self.emit("speed", {
+				speed: data.speedKmph,
+				t: (new Date().valueOf())
+			})
+			else if (data.hasOwnProperty("speedKnots")) self.emit("speed", {
+				speed: self._parsespeed(data.speedKnots),
+				t: (new Date().valueOf())
+			});
+
+		break;
 		case "nav-info":
 
 			// date
