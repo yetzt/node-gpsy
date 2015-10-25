@@ -6,7 +6,7 @@ var events = require("events");
 var nmea = require("nmea");
 var util = require("util");
 
-function gpsy(device){
+function gpsy(device, baudrate = 4800){
 	
 	if (!(this instanceof gpsy)) return new gpsy(device);
 	
@@ -14,7 +14,7 @@ function gpsy(device){
 	
 	self._opened = false;
 	
-	self.port = new serialport.SerialPort(device, { baudrate: 4800, parser: serialport.parsers.readline(/[\r\n]+/) });
+	self.port = new serialport.SerialPort(device, { baudrate: baudrate, parser: serialport.parsers.readline(/[\r\n]+/) });
 
 	self.port.on("open", function(){
 		
